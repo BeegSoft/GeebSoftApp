@@ -12,26 +12,120 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hola homerito"
-        android:id="@+id/textView2" />
+        android:text="Iniciar Sesión"
+        android:id="@+id/login"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/User"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/login"
+        android:layout_toStartOf="@+id/editText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:text="Correo electrónico"
+        android:textColor="#a0a0a0"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-4dp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageView2"
+        android:src="@drawable/candado"
+        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_marginTop="19dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_alignStart="@+id/editText"
+        android:text="password"
+        android:textColor="#c6c6c6"
+        android:layout_marginBottom="-8dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recuerdame"
+        android:id="@+id/chk_RemindMe"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/editText2"
+        android:layout_alignStart="@+id/imageView2"
+        android:checked="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar"
+        android:id="@+id/btn_login"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/editText2"
+        android:layout_alignStart="@+id/editText2" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:src="@drawable/or"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/btn_login"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_LoginFacebook"
+        android:src="@drawable/facebook3"
+        android:layout_marginTop="19dp"
+        android:background="#ffffff"
+        android:layout_below="@+id/imageView3"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_LoginGoogle"
+        android:layout_below="@+id/btn_LoginFacebook"
+        android:layout_alignStart="@+id/btn_LoginFacebook"
+        android:layout_marginTop="19dp"
+        android:background="#ffffff"
+        android:src="@drawable/boton_google" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Prueba 2 con homerito"
+        android:text="¿No tienes una cuenta?"
         android:id="@+id/textView"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="54dp"
-        android:textSize="90px" />
+        android:layout_below="@+id/btn_LoginGoogle"
+        android:layout_alignStart="@+id/login"
+        android:layout_marginTop="5dp" />
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Prueba commit homero"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/textView"
+        android:text="Registrate"
+        android:id="@+id/btn_Registrarse"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="85dp"
-        android:textSize="90px" />
+        android:textColor="#ffffff"
+        android:background="#49a693" />
+
 </RelativeLayout>

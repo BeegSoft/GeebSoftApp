@@ -22,7 +22,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:id="@+id/imageView"
-        android:src="@drawable/User"
+        android:src="@drawable/user"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/login"
         android:layout_toStartOf="@+id/editText" />

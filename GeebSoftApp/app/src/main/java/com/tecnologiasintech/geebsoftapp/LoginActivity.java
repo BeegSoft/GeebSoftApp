@@ -31,9 +31,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
@@ -144,15 +146,28 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail:failed", task.getException());
-                            Toast.makeText(LoginActivity.this, R.string.auth_failed,
-                                    Toast.LENGTH_SHORT).show();
+
                         }else{
-                            startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+                            startActivity(new Intent(LoginActivity.this,MainActivity.class));
                         }
 
                     }
+
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                        if(e instanceof FirebaseAuthException){
+                            Log.v("Error_FirebaseAuth",
+                                    ((FirebaseAuthException) e).getErrorCode()
+                            );
+                            Toast.makeText(LoginActivity.this,((FirebaseAuthException) e).getErrorCode(),Toast.LENGTH_LONG).show();
+                        }
+
+
+                    }
                 });
-        // [END sign_in_with_email]
+                // [END sign_in_with_email]
 
     }
 

@@ -49,6 +49,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
 
+
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private static final String TAG = "Login_Activity";
@@ -100,6 +101,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         };
 
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -130,6 +132,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     }
 
+
+
+
     //Todo: Email Auth
 
     private void signIn(String email, String password){
@@ -154,23 +159,24 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     }
 
                 }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
+            @Override
+            public void onFailure(@NonNull Exception e) {
 
-                        if(e instanceof FirebaseAuthException){
-                            Log.v("Error_FirebaseAuth",
-                                    ((FirebaseAuthException) e).getErrorCode()
-                            );
-                            Toast.makeText(LoginActivity.this,((FirebaseAuthException) e).getErrorCode(),Toast.LENGTH_LONG).show();
-                        }
+                if(e instanceof FirebaseAuthException){
+                    Log.v("Error_FirebaseAuth",((FirebaseAuthException) e).getErrorCode());
+
+                    Toast.makeText(LoginActivity.this,
+                            FirebaseExceptionConstants.getFirebaseExceptionConstants(
+                                    (((FirebaseAuthException) e).getErrorCode())),
+                            Toast.LENGTH_LONG).show();
+                }
 
 
-                    }
-                });
-                // [END sign_in_with_email]
+            }
+        });
+        // [END sign_in_with_email]
 
     }
-
 
 
     /**
@@ -258,12 +264,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         boolean cancel = false;
         View focusView = null;
 
-        // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+        // Check for a valid password
+        if (TextUtils.isEmpty(password)) {
+            mPasswordView.setError(getString(R.string.error_field_required));
+            focusView = mPasswordView;
+            cancel = true;
+        } else if (!isPasswordValid(password)) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
             focusView = mPasswordView;
             cancel = true;
         }
+
 
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
@@ -302,7 +313,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+
+
+
+        return password.length() > 4 && password.length()!=0;
     }
 
     /**

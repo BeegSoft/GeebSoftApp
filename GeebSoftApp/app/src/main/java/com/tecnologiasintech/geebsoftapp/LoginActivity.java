@@ -57,10 +57,15 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class LoginActivity extends AppCompatActivity
         implements LoaderCallbacks<Cursor>,GoogleApiClient.OnConnectionFailedListener{
 
-
     //Google Auth
     private static int RC_SIGN_IN = 0;
     private GoogleApiClient mGoogleApiClient;
+
+//    //Facebook Auth
+//    private LoginButton loginButton;
+//    private CallbackManager callbackManager;
+
+
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -126,6 +131,30 @@ public class LoginActivity extends AppCompatActivity
                 .build();
 
 
+//        //Facebook Auth
+//        FacebookSdk.sdkInitialize(this.getApplicationContext());
+//        callbackManager = CallbackManager.Factory.create();
+//
+//        loginButton = (LoginButton) findViewById(R.id.facebook_sign_in_button);
+//
+//        loginButton.setReadPermissions("email", "public_profile");
+//
+//        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+//            @Override
+//            public void onSuccess(LoginResult loginResult) {
+//                handleFacebookAccessToken(loginResult.getAccessToken());
+//            }
+//
+//            @Override
+//            public void onCancel() {
+//                Toast.makeText(getApplicationContext(), R.string.cancel_login, Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onError(FacebookException error) {
+//                Toast.makeText(getApplicationContext(), R.string.error_login, Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -161,11 +190,8 @@ public class LoginActivity extends AppCompatActivity
             }
         });
 
-
-
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
-
 
     }
 
@@ -181,6 +207,11 @@ public class LoginActivity extends AppCompatActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+//        //facebook
+//        callbackManager.onActivityResult(requestCode, resultCode, data);
+
+        //google
 
         if(requestCode == RC_SIGN_IN){
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
@@ -209,6 +240,34 @@ public class LoginActivity extends AppCompatActivity
                 });
     }
 
+//    private void handleFacebookAccessToken(AccessToken token) {
+//        Log.d(TAG, "handleFacebookAccessToken:" + token);
+//
+//        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+//        mAuth.signInWithCredential(credential)
+//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
+//
+//                        // If sign in fails, display a message to the user. If sign in succeeds
+//                        // the auth state listener will be notified and logic to handle the
+//                        // signed in user can be handled in the listener.
+//                        if (!task.isSuccessful()) {
+//                            Log.w(TAG, "signInWithCredential", task.getException());
+//                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+//                                    Toast.LENGTH_SHORT).show();
+//                        }else{
+//                            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+//                        }
+//
+//
+//
+//                        // ...
+//                    }
+//                });
+//    }
+
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Log.d(TAG, "Connection failed.");
@@ -218,10 +277,6 @@ public class LoginActivity extends AppCompatActivity
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
-
-
-
-    //Todo: Email Auth
 
     private void signIn(String email, String password){
 
@@ -263,7 +318,6 @@ public class LoginActivity extends AppCompatActivity
         // [END sign_in_with_email]
 
     }
-
 
     /**
      * Dispatch onStart() to all fragments.  Ensure any created loaders are
@@ -327,8 +381,6 @@ public class LoginActivity extends AppCompatActivity
             }
         }
     }
-
-
     /**
      * Attempts to sign in or register the account specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
@@ -389,8 +441,6 @@ public class LoginActivity extends AppCompatActivity
             mAuthTask.execute((Void) null);*/
         }
     }
-
-
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
@@ -483,7 +533,6 @@ public class LoginActivity extends AppCompatActivity
 
         mEmailView.setAdapter(adapter);
     }
-
 
     private interface ProfileQuery {
         String[] PROJECTION = {

@@ -5,7 +5,7 @@
 
     <string name="cancel_login">Se canceló la operación</string>
     <string name="error_login">Ocurrió un error al ingresar</string>
-    <string name="facebook_app_id">c47987a23bcab5cfbb3962f061d601c1</string>
+    <!--<string name="facebook_app_id">c47987a23bcab5cfbb3962f061d601c1</string>-->
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

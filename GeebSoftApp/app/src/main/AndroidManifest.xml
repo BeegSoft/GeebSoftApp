@@ -19,6 +19,12 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login">
+
+            <!--
+            Removes current activirt's title bar but sets theme to dark
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            -->
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -26,6 +32,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUpActivity">
+        </activity>
+        <activity android:name=".ResetPasswordActivity">
         </activity>
     </application>
 

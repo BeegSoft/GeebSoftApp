@@ -93,15 +93,21 @@ public class LoginActivity extends AppCompatActivity
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-
+    private Button mTextViewSignUp;
+    private Button mTextViewResetPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         mAuth = FirebaseAuth.getInstance();
+
+        //Checks if User is Logged In
+        if(mAuth.getCurrentUser()!=null){
+            //User is logged In
+            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+        }
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -190,6 +196,23 @@ public class LoginActivity extends AppCompatActivity
             }
         });
 
+        mTextViewResetPassword = (Button) findViewById(R.id.txtViewResetPassword);
+        mTextViewResetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this,ResetPasswordActivity.class));
+            }
+        });
+
+        mTextViewSignUp= (Button) findViewById(R.id.txtViewSignUp);
+        mTextViewSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+            }
+        });
+
+
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
 
@@ -229,11 +252,17 @@ public class LoginActivity extends AppCompatActivity
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct){
+
+        showProgress(true);
+
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
+
+
                         Log.d("AUTH", "signInWithCredential:oncomplete: " + task.isSuccessful());
                         startActivity(new Intent(LoginActivity.this,MainActivity.class));
                     }
@@ -281,6 +310,9 @@ public class LoginActivity extends AppCompatActivity
     private void signIn(String email, String password){
 
         // [START sign_in_with_email]
+
+        showProgress(true);
+
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -302,6 +334,8 @@ public class LoginActivity extends AppCompatActivity
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+
+                showProgress(false);
 
                 if(e instanceof FirebaseAuthException){
                     Log.v("Error_FirebaseAuth",((FirebaseAuthException) e).getErrorCode());
@@ -436,8 +470,8 @@ public class LoginActivity extends AppCompatActivity
 
             signIn(email,password);
 
-            /*showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
+
+            /*mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);*/
         }
     }

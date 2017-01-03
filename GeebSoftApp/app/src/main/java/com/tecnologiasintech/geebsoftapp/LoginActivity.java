@@ -95,12 +95,27 @@ public class LoginActivity extends AppCompatActivity
     private View mLoginFormView;
     private Button mTextViewSignUp;
     private Button mTextViewResetPassword;
+    SignInButton gPlusLoginButton = (SignInButton) findViewById(R.id.google_sign_in_button);
+    protected void setButtonText(SignInButton signInButton, String buttonText) {
+        for (int i = 0; i < signInButton.getChildCount(); i++) {
+            View v = signInButton.getChildAt(i);
 
+            // if the view is instance of TextView then change the text SignInButton
+            if (v instanceof TextView) {
+                TextView tv = (TextView) v;
+                tv.setText(buttonText);
+                return;
+            }
+        }
+    }
+    //google_sign_in_button
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // login implementation
+        setButtonText(gPlusLoginButton, "Iniciar Sesión con Google");
         mAuth = FirebaseAuth.getInstance();
 
         //Checks if User is Logged In

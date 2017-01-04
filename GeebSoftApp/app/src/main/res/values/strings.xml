@@ -10,7 +10,7 @@
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short"> Resgistrarse </string>
+    <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
@@ -19,14 +19,11 @@
         completions."
     </string>
     <string name="auth_failed">Error, en Login</string>
-    <string name="facebook_login">Iniciar Sesión con Facebook</string>
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
-    <!--Textos de login-->
-    <String name="Crear_Cuenta">Crear cuenta</String>
 
     <string name="btn_back">back</string>
     <string name="btn_reset_password">resetear Contrasena</string>
@@ -38,6 +35,10 @@
     <string name="hint_password_SignUp_Confirmation">Confirm Password</string>
     <string name="SignUpUserName">User Name</string>
     <string name="btn_forgot_password">Olvido su Contrasena</string>
-    <string name="btn_link_to_register">Registrar su cuenta</string>
+    <string name="btn_link_to_sign_up">Sign Up</string>
+    <string name="btn_link_to_sign_in">Sign In</string>
+
+    <string name="txtView_Copyright">Copyright &#169; Tecnologias Intech Inc. All rights reserved</string>
+
 
 </resources>

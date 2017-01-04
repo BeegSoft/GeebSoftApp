@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.R.layout;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -44,6 +47,8 @@ public class LoginActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
@@ -82,14 +87,14 @@ public class LoginActivity extends AppCompatActivity
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        SignInButton mGooglesignInButton = (SignInButton) findViewById(R.id.google_sign_in_button);
-        mGooglesignInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.v(TAG,"Google Sign In Button Clicked");
-                signInWithGoogle();
-            }
-        });
+//        SignInButton mGoogleSignInButton = (SignInButton) findViewById(R.id.google_sign_in_button);
+//
+//        mGoogleSignInButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                signInWithGoogle();
+//            }
+//        });
 
         mbtnViewSignUp= (Button) findViewById(R.id.btnViewSignUp);
         mbtnViewSignUp.setOnClickListener(new View.OnClickListener() {

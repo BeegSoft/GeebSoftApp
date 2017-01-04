@@ -35,8 +35,10 @@
     <string name="hint_password_SignUp_Confirmation">Confirm Password</string>
     <string name="SignUpUserName">User Name</string>
     <string name="btn_forgot_password">Olvido su Contrasena</string>
-    <string name="btn_link_to_sign_up">Sign Up</string>
-    <string name="btn_link_to_sign_in">Sign In</string>
+    <string name="btn_link_to_sign_up">SIGN UP</string>
+    <string name="btn_link_to_sign_in">SIGN IN</string>
+    <string name="btn_continue_with_facebook">CONTINUE WITH FACEBOOK</string>
+    <string name="btn_continue_with_google">CONTINUE WITH GOOGLE</string>
 
     <string name="txtView_Copyright">Copyright &#169; Tecnologias Intech Inc. All rights reserved</string>
 

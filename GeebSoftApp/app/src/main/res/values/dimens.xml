@@ -6,5 +6,6 @@
     <dimen name="margin_top_login_form">15dp</dimen>
     <dimen name="heigh_button_form">50dp</dimen>
     <dimen name="padding_editText_form">10dp</dimen>
+    <dimen name="prueba">10dp</dimen>
 </resources>
 

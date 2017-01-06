@@ -8,4 +8,5 @@
     <color name="black_overlay">#66000000</color>
     <color name="background_color_google">#d62d20</color>
     <color name="blue_color_button">#3d88ec</color>
+    <color name="background_login">#6C7A89</color>
 </resources>

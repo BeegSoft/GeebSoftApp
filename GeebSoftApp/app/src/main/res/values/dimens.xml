@@ -2,5 +2,9 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin_left_right_login_form">20dp</dimen>
+    <dimen name="margin_top_login_form">15dp</dimen>
+    <dimen name="heigh_button_form">50dp</dimen>
+    <dimen name="padding_editText_form">10dp</dimen>
 </resources>
 

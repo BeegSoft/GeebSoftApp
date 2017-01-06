@@ -9,7 +9,7 @@
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in">Sign in</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
@@ -26,15 +26,15 @@
 
 
     <string name="btn_back">Regresar</string>
-    <string name="btn_reset_password">resetear Contrasena</string>
-    <string name="forgot_password_msg">Solo necesitamos su correo regirstrado para enviar su contraseña  reset instuciones</string>
-    <string name="lbl_forgot_password">Se le Ovido la Contrasena?</string>
+    <string name="btn_reset_password">Restablecer Contraseña</string>
+    <string name="forgot_password_msg">Introduce su correo para enviarle instrucciones</string>
+    <string name="lbl_forgot_password">Olvidó su contraseña?</string>
     <string name="hint_email">Email</string>
     <string name="email_SignUp">Email</string>
     <string name="hint_password">Password</string>
     <string name="hint_password_SignUp_Confirmation">Confirm Password</string>
-    <string name="SignUpUserName">User Name</string>
-    <string name="btn_forgot_password">Olvido su Contrasena</string>
+    <string name="SignUpUserName">Username</string>
+    <string name="btn_forgot_password">Olvidaste tu contraseña?</string>
     <string name="btn_link_to_sign_up">SIGN UP</string>
     <string name="btn_link_to_sign_in">SIGN IN</string>
     <string name="btn_continue_with_facebook">CONTINUE WITH FACEBOOK</string>

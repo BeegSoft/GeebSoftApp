@@ -19,20 +19,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.sign_up01);
 
-        TextView mUserInformation = (TextView) findViewById(R.id.txtViewUserName);
-        mUserInformation.setText(user.getDisplayName());
-
-        Button mSignOutButton=(Button) findViewById(R.id.sign_out_button);
-
-        mSignOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.v(TAG,"Sign Out Button Clicked");
-                signOut();
-            }
-        });
+//        TextView mUserInformation = (TextView) findViewById(R.id.txtViewUserName);
+//        mUserInformation.setText(user.getDisplayName());
+//
+//        Button mSignOutButton=(Button) findViewById(R.id.sign_out_button);
+//
+//        mSignOutButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.v(TAG,"Sign Out Button Clicked");
+//                signOut();
+//            }
+//        });
 
 
     }

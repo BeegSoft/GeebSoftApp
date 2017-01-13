@@ -94,13 +94,10 @@
             android:id="@+id/sign_up_button"
             style="?android:textAppearanceSmall"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
 
-
-            android:text="@string/action_sign_in_short"
-            android:textColor="@android:color/black"
-            android:textStyle="bold" />
+            android:text="@string/btn_link_to_sign_up"
+            android:textColor="#e9f4ff"
+            />
 
         <!-- Link to Login Screen -->
 

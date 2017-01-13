@@ -40,7 +40,6 @@ public class SignUpActivity extends AppCompatActivity {
         inputUserName = (EditText) findViewById(R.id.SignUpUserName);
         inputEmail = (EditText) findViewById(R.id.SignUpemail);
         inputPassword = (EditText) findViewById(R.id.SignUppassword);
-        inputPasswordConfirmation = (EditText) findViewById(R.id.SignUppasswordConfirmation);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {

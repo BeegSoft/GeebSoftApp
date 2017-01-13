@@ -11,17 +11,15 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@color/background_login"
+        android:background="@color/background_material_light"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="@dimen/activity_horizontal_margin">
 
 
-        <ImageView
-            android:id="@+id/imageView4"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="102dp"
-            android:src="@mipmap/ic_launcher" />
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/SignUpUserName"
@@ -29,57 +27,80 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/SignUpUserName"
                 android:inputType="textEmailAddress"
-                android:layout_marginRight="@dimen/margin_left_right_login_form"
-                android:layout_marginLeft="@dimen/margin_left_right_login_form"
-                android:paddingLeft="@dimen/padding_editText_form"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
+                android:textColor="@android:color/white" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/SignUpemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margin_left_right_login_form"
-                android:layout_marginLeft="@dimen/margin_left_right_login_form"
-                android:layout_marginTop="@dimen/margin_top_login_form"
-                android:paddingLeft="@dimen/padding_editText_form"
                 android:hint="@string/email_SignUp"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
+                android:textColor="@android:color/white" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/SignUppassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:focusableInTouchMode="true"
-                android:layout_marginRight="@dimen/margin_left_right_login_form"
-                android:layout_marginLeft="@dimen/margin_left_right_login_form"
-                android:layout_marginTop="@dimen/margin_top_login_form"
-                android:paddingLeft="@dimen/padding_editText_form"
                 android:hint="@string/hint_password"
                 android:imeActionId="@+id/login"
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
+                android:textColor="@android:color/white" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/SignUppasswordConfirmation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:hint="@string/hint_password_SignUp_Confirmation"
+                android:imeActionId="@+id/login"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@android:color/white" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
 
         <Button
             android:id="@+id/sign_up_button"
+            style="?android:textAppearanceSmall"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/heigh_button_form"
-            android:layout_marginRight="@dimen/margin_left_right_login_form"
-            android:layout_marginLeft="@dimen/margin_left_right_login_form"
-            android:layout_marginTop="@dimen/margin_top_login_form"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+
+
             android:text="@string/action_sign_in_short"
-            android:textColor="#e9f4ff"
-            android:background="@drawable/background_button_sign" />
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
 
         <!-- Link to Login Screen -->
 

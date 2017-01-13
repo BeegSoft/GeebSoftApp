@@ -42,5 +42,14 @@
 
     <string name="txtView_Copyright">Copyright &#169; Tecnologias Intech Inc. All rights reserved</string>
 
+    <string name="title_register">Registrarse</string>
+    <string name="edittext_email">Correo electrónico</string>
+    <string name="edittext_password">Contraseña</string>
+    <string name="title_forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="edittext_username">Nombre de Usuario</string>
+    <string name="edittext_location">Lugar</string>
+    <string name="edittext_birthday">Fecha de naciomiento</string>
+
+
 
 </resources>

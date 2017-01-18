@@ -28,7 +28,7 @@
 
     <string name="btn_back">Regresar</string>
     <string name="btn_reset_password">Restablecer Contraseña</string>
-    <string name="forgot_password_msg">Introduce su correo para enviarle instrucciones</string>
+    <string name="forgot_password_msg">Introduzca su correo para enviarle instrucciones</string>
     <string name="lbl_forgot_password">Olvidó su contraseña?</string>
     <string name="hint_email">Email</string>
     <string name="email_SignUp">Email</string>

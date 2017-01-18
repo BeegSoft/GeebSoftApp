@@ -61,7 +61,7 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/editText"
+                        android:id="@+id/editTextLoginEmail"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginEnd="38dp"
@@ -85,7 +85,7 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/txt_password"
+                        android:id="@+id/editTextLoginPassword"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginEnd="38dp"
@@ -98,14 +98,11 @@
                         android:textColor="@color/abc_search_url_text_pressed"
                         android:textColorHint="#95a5a6"
                         android:textIsSelectable="false"
-                        android:textSize="16sp" /><![CDATA[
-
-                   />
-               ]]>
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btnLoginSignIn"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginBottom="20dp"
@@ -156,19 +153,41 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView4"
+            <Button
+                android:id="@+id/btnLoginResetPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2.84"
-                android:gravity="bottom"
+
                 android:singleLine="false"
                 android:text="@string/title_forgot_password"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:background="@null"
+                />
+
+
+            <Button
+                android:id="@+id/btnLoginSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="false"
+                android:text="@string/btn_link_to_sign_up"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:background="@null"
+                />
+
 
         </LinearLayout>
     </ScrollView>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar2" />
 
 </LinearLayout>

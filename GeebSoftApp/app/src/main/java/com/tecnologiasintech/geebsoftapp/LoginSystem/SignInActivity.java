@@ -1,4 +1,4 @@
-package com.tecnologiasintech.geebsoftapp;
+package com.tecnologiasintech.geebsoftapp.LoginSystem;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -36,6 +36,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
+import com.tecnologiasintech.geebsoftapp.MainActivity;
+import com.tecnologiasintech.geebsoftapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

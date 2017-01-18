@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">GeebSoftApp</string>
+    <string name="facebook_application_id" translatable="false">1770957699825673</string>
     <string name="login">Iniciar Sesión</string>
     <string name="title_activity_login">Sign in</string>
 
@@ -49,7 +50,8 @@
     <string name="edittext_username">Nombre de Usuario</string>
     <string name="edittext_location">Lugar</string>
     <string name="edittext_birthday">Fecha de naciomiento</string>
-
+    <string name="minimum_password">Does not meet the password minimum</string>
+    <string name="title_activity_maestro_perfil">Perfil Profesor</string>
 
 
 </resources>

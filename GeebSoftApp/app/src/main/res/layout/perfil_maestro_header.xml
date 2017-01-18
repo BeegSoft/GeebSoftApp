@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:padding="24dp"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:clipChildren="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivUserProfilePhoto"
+
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/google_icon"/>
+
+        <LinearLayout
+            android:id="@+id/vUserDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.81"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="John Smith"
+                android:id="@+id/profesor_nombre"
+                android:textColor="@color/material_grey_900"
+                android:textSize="18sp"
+                android:layout_weight="0.65"/>
+
+            <TextView
+                android:text=" 34 Visitas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:textSize="14sp"
+                />
+
+            <RatingBar
+                android:id="@+id/ratingBarPerfilMaestro"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:gravity="bottom|left"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:progressTint="#FFD700"
+                android:transformPivotX="0dp"
+                tools:numStars="5"
+                />
+
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="\@jsmith"-->
+            <!--android:textSize="12sp"-->
+            <!--android:textColor="#bbbbbb" />-->
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Seguiendo"
+        android:textColor="#fff"
+        android:id="@+id/btn_scan_qr"
+        android:textSize="12dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
+        />
+
+</LinearLayout>

@@ -36,7 +36,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/icon_alumno2"
+                        android:src="@drawable/icon_alumno"
                         android:layout_width="40dp"
                         android:layout_height="50dp"
                         android:id="@+id/imageView7"

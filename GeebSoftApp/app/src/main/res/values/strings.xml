@@ -55,6 +55,10 @@
     <string name="comment_date">Justo ahora</string>
     <string name="like">Me gusta</string>
     <string name="comment">Comentar</string>
+    <string name="number_likes">0</string>
+    <string name="number_comments">0</string>
+    <string name="number_suscribers">0</string>
+    <string name="suscribe">Suscribirse</string>
 
 
 

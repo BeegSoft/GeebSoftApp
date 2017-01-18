@@ -52,6 +52,10 @@
     <string name="edittext_birthday">Fecha de naciomiento</string>
     <string name="minimum_password">Does not meet the password minimum</string>
     <string name="title_activity_maestro_perfil">Perfil Profesor</string>
+    <string name="comment_date">Justo ahora</string>
+    <string name="like">Me gusta</string>
+    <string name="comment">Comentar</string>
+
 
 
 </resources>

@@ -7,29 +7,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    android:layout_marginTop="2dp"
-    app:cardBackgroundColor="@android:color/white">
+    android:layout_marginTop="5dp"
+    app:cardBackgroundColor="@android:color/white"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="5dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:weightSum="1"
             android:layout_alignParentTop="true"
-            android:weightSum="1">
-
-            <ImageView
-                android:src="@drawable/icon_alumno2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/imageView"
-                android:adjustViewBounds="false"
-                android:cropToPadding="false"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                />
+            android:layout_alignParentStart="true">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -38,36 +32,72 @@
                 android:layout_margin="10dp">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/textView_comentario_titulo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:typeface="sans"
-                        android:textSize="14sp"
-                        android:text="anonymous"
-
-                        android:textStyle="normal|bold"
-                        android:layout_marginRight="10dp"/>
-
-                    <TextView
-                        android:text="5.0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView_comentario_rating"
-                        />
+                    android:layout_width="352dp"
+                    android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/icon_star"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:id="@+id/imageView2"
-                        />
+                        android:src="@drawable/icon_alumno2"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/imageView7"
+                        android:layout_marginEnd="10dp" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4.04">
+
+                        <TextView
+                            android:id="@+id/textView_comentario_titulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="27dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:typeface="sans"
+                            android:textSize="14sp"
+                            android:text="anonymous"
+
+                            android:textStyle="normal|bold"
+                            android:layout_marginRight="10dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="5.0"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textView_comentario_rating"
+                                android:layout_marginEnd="5dp" />
+
+                            <ImageView
+                                android:src="@drawable/corazon"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:id="@+id/imageView2"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="2dp" />
+
+                            <TextView
+                                android:text="@string/comment_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textView4"
+                                android:layout_marginEnd="5dp" />
+
+                            <ImageView
+                                android:src="@drawable/clock"
+                                android:layout_width="16dp"
+                                android:layout_height="17dp"
+                                android:id="@+id/imageView4"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginTop="2dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
 
                 <TextView
@@ -76,8 +106,35 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/textView_commentario_cuerpo"
                     android:textSize="12sp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="5dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:text="@string/like"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:id="@+id/btn_like"
+                        android:textAllCaps="false"
+                        android:background="#ecf0f1"
+                        android:textSize="12sp"
+                        android:layout_marginEnd="25dp"
+                        android:textColor="#7f8c8d" />
+
+                    <Button
+                        android:text="@string/comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:id="@+id/button4"
+                        android:textAllCaps="false"
+                        android:textSize="12sp"
+                        android:background="#ecf0f1"
+                        android:textColor="#7f8c8d" />
+                </LinearLayout>
 
 
             </LinearLayout>

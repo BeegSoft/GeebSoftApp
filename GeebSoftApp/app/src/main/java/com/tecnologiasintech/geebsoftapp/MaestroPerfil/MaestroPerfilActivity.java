@@ -48,22 +48,22 @@ public class MaestroPerfilActivity extends AppCompatActivity {
 
         setUpTabLayoutViewPager();
 
-        Intent i = getIntent();
-
-        profesor_nombre = i.getStringExtra("Nombre_Maestro");
-
-        profesor_carrera = i.getStringExtra("Nombre_Carrera");
+//        Intent i = getIntent();
+//
+//        profesor_nombre = i.getStringExtra("Nombre_Maestro");
+//
+//        profesor_carrera = i.getStringExtra("Nombre_Carrera");
 
         //Capture Views
 
+//
+//        mProfesor_Nombre = (TextView) findViewById(R.id.profesor_nombre);
+//        mProfesor_Nombre.setText(profesor_nombre);
+//        Log.v("LogV ", "" + profesor_nombre);
 
-        mProfesor_Nombre = (TextView) findViewById(R.id.profesor_nombre);
-        mProfesor_Nombre.setText(profesor_nombre);
-        Log.v("LogV ", "" + profesor_nombre);
-
-        mRatingBar = (RatingBar) findViewById(R.id.ratingBarPerfilMaestro);
-        float valor = (float) 3.4;
-        mRatingBar.setRating(valor);
+//        mRatingBar = (RatingBar) findViewById(R.id.ratingBarPerfilMaestro);
+//        float valor = (float) 3.4;
+//        mRatingBar.setRating(valor);
 
         //mProfesor_Carrera = (TextView) findViewById(R.id.profesor_Carrera);
         //mProfesor_Carrera.setText(profesor_carrera);

@@ -41,5 +41,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView_maestro"/>
+
 
 </LinearLayout>

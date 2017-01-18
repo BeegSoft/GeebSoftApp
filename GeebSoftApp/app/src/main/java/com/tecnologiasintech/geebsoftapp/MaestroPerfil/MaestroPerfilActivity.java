@@ -34,6 +34,7 @@ public class MaestroPerfilActivity extends AppCompatActivity {
     private RatingBar mRatingBar;
 
 
+    private static final String TAG = MaestroPerfilActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +51,9 @@ public class MaestroPerfilActivity extends AppCompatActivity {
 
 //        Intent i = getIntent();
 //
-//        profesor_nombre = i.getStringExtra("Nombre_Maestro");
-//
+//        profesor_nombre = i.getStringExtra("Maestro_Nombre");
+//        Log.v(TAG,profesor_nombre);
+
 //        profesor_carrera = i.getStringExtra("Nombre_Carrera");
 
         //Capture Views

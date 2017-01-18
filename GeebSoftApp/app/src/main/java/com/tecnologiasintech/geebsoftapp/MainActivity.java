@@ -5,6 +5,8 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -16,6 +18,8 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.tecnologiasintech.geebsoftapp.LoginSystem.LoginActivity;
 import com.tecnologiasintech.geebsoftapp.MaestroPerfil.MaestroPerfilActivity;
 
@@ -23,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+    DatabaseReference db;
+    FirebaseHelper helper;
+    MyAdapter adapter;
+    RecyclerView rv;
 
     Toolbar toolbar;
 
@@ -41,6 +50,28 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, MaestroPerfilActivity.class));
             }
         });
+
+
+        //SETUP RECYCLER
+        rv = (RecyclerView) findViewById(R.id.recyclerView_maestro);
+        rv.setLayoutManager(new LinearLayoutManager(this));
+        //INITIALIZE FIREBASE DB
+        db= FirebaseDatabase.getInstance().getReference();
+
+        helper=new FirebaseHelper(db);
+
+
+        //ADAPTER
+        adapter=new MyAdapter(this,helper.retrieve());
+        rv.setAdapter(adapter);
+
+
+
+
+
+
+
+
 
 //        TextView mUserInformation = (TextView) findViewById(R.id.txtViewUserName);
 //        mUserInformation.setText(user.getDisplayName());

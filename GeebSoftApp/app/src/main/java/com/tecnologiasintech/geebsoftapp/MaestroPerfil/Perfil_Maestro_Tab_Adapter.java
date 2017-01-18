@@ -39,10 +39,10 @@ public class Perfil_Maestro_Tab_Adapter extends FragmentPagerAdapter{
             case 0: // siempre empieza desde 0
                 return new ComentarioFragment();
 
-            case 1:
-                return new PreguntaFragment();
+//            case 1:
+//                return new PreguntaFragment();
 
-            case 2:
+            case 1:
                 return  new MateriaFragment();
 
             // si la posición recibida no se corresponde a ninguna sección
@@ -60,10 +60,10 @@ public class Perfil_Maestro_Tab_Adapter extends FragmentPagerAdapter{
 
             case 0: // siempre empieza desde 0, la primera Tab es 0
                 return "Comentarios";
-            case 1:
-                return "Preguntas";
+//            case 1:
+//                return "Preguntas";
 
-            case 2:
+            case 1:
                 return "Materias";
 
             // si la posición recibida no se corresponde a ninguna sección

@@ -81,7 +81,7 @@ public class MaestroPerfilActivity extends AppCompatActivity {
 
         tabLayout.addTab(tabLayout.newTab());
         tabLayout.addTab(tabLayout.newTab());
-        tabLayout.addTab(tabLayout.newTab());
+        //tabLayout.addTab(tabLayout.newTab());
 
 
 
@@ -120,7 +120,7 @@ public class MaestroPerfilActivity extends AppCompatActivity {
 
 
                 currentPage = arg0;
-                if(currentPage <=1) {
+                if(currentPage <1) {
                     fab.show();
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -130,14 +130,15 @@ public class MaestroPerfilActivity extends AppCompatActivity {
 
                                 addComentario();
 
-                            }else if (currentPage==1){
-//                                addPregunta();
                             }
-//                            Snackbar.make(view, "Se presionó el FAB " + currentPage, Snackbar.LENGTH_LONG)
+//                            else if (currentPage==1){
+//                               addPregunta();
+//                            }
+//                          Snackbar.make(view, "Se presionó el FAB " + currentPage, Snackbar.LENGTH_LONG)
 //                                    .setAction("Action", null).show();
                         }
                     });
-                }else if(currentPage==2){
+                }else if(currentPage==1){
                     fab.hide();
                 }
             }

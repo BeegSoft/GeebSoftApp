@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tecnologiasintech.geebsoftapp.MaestroPerfil.Recycler.RecyclerAdapterComentario;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.tecnologiasintech.geebsoftapp.MaestroPerfil.Recycler.ComentarioAdapter;
 import com.tecnologiasintech.geebsoftapp.R;
 
 /**
@@ -16,7 +18,17 @@ import com.tecnologiasintech.geebsoftapp.R;
  */
 
 public class ComentarioFragment extends Fragment {
-    private RecyclerAdapterComentario mAdapter;
+
+
+    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference comentarioRef = myRef.child("geeb-e2f11").child("Maestros").child("AHUMADA FLORES JOSE CARLOS")
+            .child("maestroComentarios");
+
+
+
+    FirebaseComentarioHelper helper;
+    ComentarioAdapter adapter;
+    RecyclerView rv;
 
     public ComentarioFragment() {
         // Required empty public constructor
@@ -30,22 +42,43 @@ public class ComentarioFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_comentarios, container, false);
 
+        //SETUP RECYCLER
+        rv = (RecyclerView) view.findViewById(R.id.recyclerView_Comentarios);
+        rv.setLayoutManager(new LinearLayoutManager(getContext()));
+        //INITIALIZE FIREBASE DB
+
+
+        helper=new FirebaseComentarioHelper(comentarioRef);
+
+
+        //ADAPTER
+        adapter=new ComentarioAdapter(getContext(),helper.retrieve());
+        rv.setAdapter(adapter);
+
 
         // Inflate the layout for this fragment
         //Capture the recyclerView
 
-        RecyclerView recyclerView = (RecyclerView)
-                view.findViewById(R.id.recyclerView_Comentarios);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        recyclerView.setHasFixedSize(true);
+//        RecyclerView recyclerView = (RecyclerView)
+//                view.findViewById(R.id.recyclerView_Comentarios);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+//        recyclerView.setHasFixedSize(true);
+//
+//        //Create the Adapter
+//        mAdapter = new RecyclerAdapterComentario(this.getContext(),recyclerView);
+//
+//        //Binding
+//        recyclerView.setAdapter(mAdapter);
 
-        //Create the Adapter
-        mAdapter = new RecyclerAdapterComentario(this.getContext(),recyclerView);
 
-        //Binding
-        recyclerView.setAdapter(mAdapter);
+
+
+
+
 
         return view;
 
     }
+
+
 }

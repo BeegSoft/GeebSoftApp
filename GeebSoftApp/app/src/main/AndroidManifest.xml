@@ -45,6 +45,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tecnologiasintech.geebsoftapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/ScrollingTheme">
+
+        </activity>
     </application>
 
 </manifest>

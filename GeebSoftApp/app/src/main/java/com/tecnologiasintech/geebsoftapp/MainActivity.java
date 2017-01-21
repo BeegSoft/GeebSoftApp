@@ -21,7 +21,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.tecnologiasintech.geebsoftapp.LoginSystem.LoginActivity;
+import com.tecnologiasintech.geebsoftapp.MaestroPerfil.Fragments.FirebaseComentarioHelper;
 import com.tecnologiasintech.geebsoftapp.MaestroPerfil.MaestroPerfilActivity;
+import com.tecnologiasintech.geebsoftapp.MaestroPerfil.Recycler.ComentarioAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,8 +34,29 @@ public class MainActivity extends AppCompatActivity {
     FirebaseHelper helper;
     MyAdapter adapter;
     RecyclerView rv;
-
+//    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+//    DatabaseReference comentarioRef = myRef
+//            .child("Maestros").child("AHUMADA FLORES JOSE CARLOS");
+//
+//
+//    FirebaseComentarioHelper helper;
+//
+//    ComentarioAdapter adapter;
+//    RecyclerView rv;
     Toolbar toolbar;
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        Log.v(TAG,"onPostResume");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.v(TAG,"onstart");
+        rv.setAdapter(adapter);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,27 +66,55 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Log.v(TAG,"oncreate method created");
+
         Button btnViews = (Button) findViewById(R.id.btnSwipeViews);
         btnViews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, MaestroPerfilActivity.class));
+                Log.v("a","a");
+                rv.setAdapter(adapter);
+                //startActivity(new Intent(MainActivity.this, MaestroPerfilActivity.class));
             }
         });
+
+
+
+
+//        //SETUP RECYCLER
+//        rv = (RecyclerView) findViewById(R.id.recyclerView_maestro);
+//        rv.setLayoutManager(new LinearLayoutManager(this));
+//        //INITIALIZE FIREBASE DB
+//
+//
+//        helper=new FirebaseComentarioHelper(comentarioRef);
+//
+//
+//        //ADAPTER
+//        adapter=new ComentarioAdapter(this,helper.retrieve());
+//
+//
+//
+//        rv.setAdapter(adapter);
 
 
         //SETUP RECYCLER
         rv = (RecyclerView) findViewById(R.id.recyclerView_maestro);
         rv.setLayoutManager(new LinearLayoutManager(this));
+        rv.setHasFixedSize(true);
         //INITIALIZE FIREBASE DB
         db= FirebaseDatabase.getInstance().getReference();
 
         helper=new FirebaseHelper(db);
 
 
+
         //ADAPTER
         adapter=new MyAdapter(this,helper.retrieve());
         rv.setAdapter(adapter);
+
+
+
 
 
 

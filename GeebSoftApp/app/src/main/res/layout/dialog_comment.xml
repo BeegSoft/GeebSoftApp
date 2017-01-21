@@ -6,31 +6,15 @@
     android:layout_gravity="center"
     android:orientation="vertical"  >
 
-    <GridView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <ImageView
-        android:src="@drawable/icon_alumno"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:id="@+id/imageView3"
-        android:layout_gravity="center"/>
-
-    <TextView
-        android:id="@+id/lbl_your_name"
-        android:text="Your name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"/>
-
     <EditText
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editText3"
-        android:hint="Commentario"
+        android:hint="Escribe aquí..."
         android:textSize="14sp"
-        android:gravity="top|center_vertical"/>
+        android:gravity="top|center_vertical"
+        android:paddingLeft="10dp"
+        />
 </LinearLayout>

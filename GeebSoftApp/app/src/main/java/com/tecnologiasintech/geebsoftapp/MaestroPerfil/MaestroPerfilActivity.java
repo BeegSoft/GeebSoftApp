@@ -151,6 +151,7 @@ public class MaestroPerfilActivity extends AppCompatActivity {
 
         final Dialog dialog = new AlertDialog.Builder(this)
 
+                .setTitle("Comentario")
                 .setView(R.layout.dialog_comment)
                 .setNegativeButton(android.R.string.cancel,null)
                 .create();

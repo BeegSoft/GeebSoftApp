@@ -14,7 +14,8 @@ import com.tecnologiasintech.geebsoftapp.R;
 
 public class MyViewHolderComentario extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-    TextView usuarioComentarioTxt,usuarioFechaPublicacionTxt,usuarioLikeTxt,usuarioNombreTxt;
+    TextView usuarioComentarioTxt,usuarioFechaPublicacionTxt,usuarioNombreTxt;
+    //,usuarioLikeTxt
     //ImageView usuarioFotoPerfilImg;
     ItemClickListener itemClickListener;
 
@@ -24,7 +25,7 @@ public class MyViewHolderComentario extends RecyclerView.ViewHolder implements V
         usuarioComentarioTxt= (TextView) itemView.findViewById(R.id.txtViewusuarioComentario);
         usuarioFechaPublicacionTxt= (TextView) itemView.findViewById(R.id.txtViewusuarioFechaPublicacion);
         //usuarioFotoPerfilTxt= (TextView) itemView.findViewById(R.id.imageViewusuarioFotoPerfill);
-        usuarioLikeTxt= (TextView) itemView.findViewById(R.id.txtViewusuarioLike);
+        //usuarioLikeTxt= (TextView) itemView.findViewById(R.id.txtViewusuarioLike);
         usuarioNombreTxt= (TextView) itemView.findViewById(R.id.txtViewusuarioNombre);
 
 

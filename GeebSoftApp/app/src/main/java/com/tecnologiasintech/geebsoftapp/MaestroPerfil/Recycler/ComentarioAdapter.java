@@ -43,8 +43,9 @@ public class ComentarioAdapter extends RecyclerView.Adapter<MyViewHolderComentar
 
         holder.usuarioComentarioTxt.setText(m.getUsuarioComentario());
         holder.usuarioFechaPublicacionTxt.setText(m.getUsuarioFechaPublicacion());
-        holder.usuarioLikeTxt.setText(m.getUsuarioLike());
+//        holder.usuarioLikeTxt.setText(m.getUsuarioLike());
         holder.usuarioNombreTxt.setText(m.getUsuarioNombre());
+
 
         holder.setItemClickListener(new ItemClickListener() {
             @Override

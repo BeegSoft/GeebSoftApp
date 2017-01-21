@@ -6,11 +6,17 @@ package com.tecnologiasintech.geebsoftapp.MaestroPerfil.Recycler.DataModel;
 
 public class maestroComentarios {
 
-    String usuarioComentario,usuarioFechaPublicacion,usuarioFotoPerfil,usuarioNombre;
-    int usuarioLike;
+    String usuarioComentario,usuarioFechaPublicacion,usuarioNombre;
+    //usuarioFotoPerfil,usuarioLike
 
 
     public maestroComentarios(){}
+
+//    public maestroComentarios(String usuarioComentario,String usuarioFechaPublicacion,String usuarioNombre){
+//        this.usuarioComentario=usuarioComentario;
+//        this.usuarioFechaPublicacion=usuarioFechaPublicacion;
+//        this.usuarioNombre=usuarioNombre;
+//    }
 
 
     public String getUsuarioComentario() {
@@ -29,13 +35,13 @@ public class maestroComentarios {
         this.usuarioFechaPublicacion = usuarioFechaPublicacion;
     }
 
-    public String getUsuarioFotoPerfil() {
-        return usuarioFotoPerfil;
-    }
-
-    public void setUsuarioFotoPerfil(String usuarioFotoPerfil) {
-        this.usuarioFotoPerfil = usuarioFotoPerfil;
-    }
+//    public String getUsuarioFotoPerfil() {
+//        return usuarioFotoPerfil;
+//    }
+//
+//    public void setUsuarioFotoPerfil(String usuarioFotoPerfil) {
+//        this.usuarioFotoPerfil = usuarioFotoPerfil;
+//    }
 
     public String getUsuarioNombre() {
         return usuarioNombre;
@@ -44,14 +50,14 @@ public class maestroComentarios {
     public void setUsuarioNombre(String usuarioNombre) {
         this.usuarioNombre = usuarioNombre;
     }
-
-    public int getUsuarioLike() {
-        return usuarioLike;
-    }
-
-    public void setUsuarioLike(int usuarioLike) {
-        this.usuarioLike = usuarioLike;
-    }
+//
+//    public String getUsuarioLike() {
+//        return usuarioLike;
+//    }
+//
+//    public void setUsuarioLike(String usuarioLike) {
+//        this.usuarioLike = usuarioLike;
+//    }
 
 
 

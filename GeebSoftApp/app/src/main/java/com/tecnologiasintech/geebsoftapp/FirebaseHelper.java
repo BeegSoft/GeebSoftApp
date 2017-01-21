@@ -17,7 +17,7 @@ public class FirebaseHelper {
 
     private  static final String TAG = FirebaseHelper.class.getSimpleName();
     DatabaseReference db;
-    public int contador=0;
+
 
     ArrayList<Maestros> maestroses=new ArrayList<>();
 
@@ -33,25 +33,34 @@ public class FirebaseHelper {
         {
 
             Maestros maestro=ds.getValue(Maestros.class);
-            Log.v(TAG,"Hello Snapshot" +  maestro.getMaestroNombre());
-            Log.v("Total",""+contador +" datasnapshot "+ dataSnapshot.child("Maestros").getRef()+" getRef:"+ ds.getRef());
+            //Log.v(TAG,"Hello Snapshot" +  maestro.getMaestroNombre());
+            //Log.v("Total",""+contador +" datasnapshot "+ dataSnapshot.child("Maestros").getRef()+" getRef:"+ ds.getRef());
 
 
-            contador++;
+
             maestroses.add(maestro);
         }
+
+
+
     }
 
     //READ THEN RETURN ARRAYLIST
     public ArrayList<Maestros> retrieve() {
+
+        Log.v("Listener","retrieve");
+
         db.addChildEventListener(new ChildEventListener() {
+
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 fetchData(dataSnapshot);
+                Log.v("Listener","childadded");
             }
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 fetchData(dataSnapshot);
+                Log.v("Listener","childadded");
             }
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {

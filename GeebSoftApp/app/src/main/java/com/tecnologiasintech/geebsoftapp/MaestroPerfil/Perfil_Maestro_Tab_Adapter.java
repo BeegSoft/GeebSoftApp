@@ -52,6 +52,8 @@ public class Perfil_Maestro_Tab_Adapter extends FragmentPagerAdapter{
     }
 
 
+
+
     @Override
     public CharSequence getPageTitle(int position) {
 

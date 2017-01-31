@@ -38,18 +38,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp">
 
+
                 <TextView
-                    android:id="@+id/textViewMateriaCarrera"
+                    android:text="ZEPEDA MIRAMONTES FRANCISCA LORENA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:typeface="sans"
-                    android:textSize="12sp"
-                    android:text="Ing. en Sistemas Computacionales"
-
-                    />
+                    android:id="@+id/textViewMateriaCarrera"
+                    android:textSize="14sp"
+                    android:textStyle="normal|bold"/>
 
                 <TextView
                     android:text="ZEPEDA MIRAMONTES FRANCISCA LORENA"

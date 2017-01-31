@@ -128,25 +128,48 @@
                     android:layout_marginBottom="30dp"
                     android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/btn_register_facebook"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginEnd="34dp"
-                        android:layout_marginStart="34dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/button_facebook_login" />
+                    <!--<Button-->
+                        <!--android:id="@+id/btn_register_facebook"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="45dp"-->
+                        <!--android:layout_marginBottom="10dp"-->
+                        <!--android:layout_marginEnd="34dp"-->
+                        <!--android:layout_marginStart="34dp"-->
+                        <!--android:layout_marginTop="20dp"-->
+                        <!--android:background="@drawable/button_facebook_login" />-->
 
-                    <Button
-                        android:id="@+id/imageButton4"
+                    <com.facebook.login.widget.LoginButton
+                        xmlns:fb="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/btn_register_facebook"
+
                         android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginEnd="34dp"
-                        android:layout_marginStart="34dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/button_google_login" />
+
+                        android:drawableLeft="@null"
+                        fb:com_facebook_confirm_logout="false"
+                        fb:com_facebook_login_text=""
+                        fb:com_facebook_logout_text=""
+                        style="@style/FacebookLoginButton"
+
+                        />
+
+
+                    <!--<com.google.android.gms.common.SignInButton-->
+                        <!--android:id="@+id/google_sign_in_button"-->
+                        <!--android:layout_width="match_parent"-->
+
+                        <!--style="@style/GoogleSignInButton"-->
+
+                        <!--/>-->
+
+                    <!--<Button-->
+                        <!--android:id="@+id/google_sign_in_button"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="45dp"-->
+                        <!--android:layout_marginBottom="10dp"-->
+                        <!--android:layout_marginEnd="34dp"-->
+                        <!--android:layout_marginStart="34dp"-->
+                        <!--android:layout_marginTop="10dp"-->
+                        <!--android:background="@drawable/button_google_login" />-->
 
                 </LinearLayout>
 

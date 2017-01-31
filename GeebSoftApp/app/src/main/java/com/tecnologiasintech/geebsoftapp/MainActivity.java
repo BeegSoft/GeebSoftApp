@@ -1,6 +1,8 @@
 package com.tecnologiasintech.geebsoftapp;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,8 +16,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -25,38 +30,29 @@ import com.tecnologiasintech.geebsoftapp.MaestroPerfil.Fragments.FirebaseComenta
 import com.tecnologiasintech.geebsoftapp.MaestroPerfil.MaestroPerfilActivity;
 import com.tecnologiasintech.geebsoftapp.MaestroPerfil.Recycler.ComentarioAdapter;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+
+import static com.tecnologiasintech.geebsoftapp.R.id.imageViewUser;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private MaestroAdapter mAdapter;
+    private Maestro maestro;
 
-    DatabaseReference db;
-    FirebaseHelper helper;
-    MyAdapter adapter;
-    RecyclerView rv;
-//    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
-//    DatabaseReference comentarioRef = myRef
-//            .child("Maestros").child("AHUMADA FLORES JOSE CARLOS");
-//
-//
-//    FirebaseComentarioHelper helper;
-//
-//    ComentarioAdapter adapter;
-//    RecyclerView rv;
+
+
     Toolbar toolbar;
 
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-        Log.v(TAG,"onPostResume");
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.v(TAG,"onstart");
-        rv.setAdapter(adapter);
-    }
+    //UI Elements
+    TextView mUserInformation;
+    ImageView mUserProfilePicture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,84 +62,76 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Log.v(TAG,"oncreate method created");
 
-        Button btnViews = (Button) findViewById(R.id.btnSwipeViews);
-        btnViews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.v("a","a");
-                rv.setAdapter(adapter);
-                //startActivity(new Intent(MainActivity.this, MaestroPerfilActivity.class));
-            }
-        });
+        mAdapter = new MaestroAdapter(this);
+        RecyclerView view = (RecyclerView) findViewById(R.id.recyclerView_maestro);
+        view.setLayoutManager(new LinearLayoutManager(this));
+        view.setHasFixedSize(true);
+        view.setAdapter(mAdapter);
 
+        mUserProfilePicture = (ImageView) findViewById(R.id.imageViewUser);
 
+        Glide.with(this).load(user.getPhotoUrl()).into(mUserProfilePicture);
 
-
-//        //SETUP RECYCLER
-//        rv = (RecyclerView) findViewById(R.id.recyclerView_maestro);
-//        rv.setLayoutManager(new LinearLayoutManager(this));
-//        //INITIALIZE FIREBASE DB
-//
-//
-//        helper=new FirebaseComentarioHelper(comentarioRef);
-//
-//
-//        //ADAPTER
-//        adapter=new ComentarioAdapter(this,helper.retrieve());
-//
-//
-//
-//        rv.setAdapter(adapter);
+        //Log.v(TAG,user.getPhotoUrl().toString());
 
 
-        //SETUP RECYCLER
-        rv = (RecyclerView) findViewById(R.id.recyclerView_maestro);
-        rv.setLayoutManager(new LinearLayoutManager(this));
-        rv.setHasFixedSize(true);
-        //INITIALIZE FIREBASE DB
-        db= FirebaseDatabase.getInstance().getReference();
+        mUserInformation = (TextView) findViewById(R.id.txtViewUserName);
+        String displayName = "Estudiante ITH";
 
-        helper=new FirebaseHelper(db);
+        if(user.getDisplayName()!=null){
+            displayName = user.getDisplayName();
+        }
 
-
-
-        //ADAPTER
-        adapter=new MyAdapter(this,helper.retrieve());
-        rv.setAdapter(adapter);
+        mUserInformation.setText(displayName+" !");
 
 
 
 
 
+        //Todo Diseno de los botones Google and Facebook
 
+        //Todo Upload App
 
-
-
-
-
-
-//        TextView mUserInformation = (TextView) findViewById(R.id.txtViewUserName);
-//        mUserInformation.setText(user.getDisplayName());
-//
-//        Button mSignOutButton=(Button) findViewById(R.id.sign_out_button);
-//
-//        mSignOutButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Log.v(TAG,"Sign Out Button Clicked");
-//                signOut();
-//            }
-//        });
 
 
     }
+
+
+
     private void signOut(){
 
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(this,LoginActivity.class));
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                signOut();
+                return true;
+
+//            case R.id.action_favorite:
+//                // User chose the "Favorite" action, mark the current item
+//                // as a favorite...
+//                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 
     @Override
@@ -173,23 +161,25 @@ public class MainActivity extends AppCompatActivity {
                 Log.v(TAG,"OnQueryTextChange: "+ newText);
 
 
-//                newText = newText.toLowerCase();
-//                ArrayList<Maestro> newList = new ArrayList<>();
-//
-//
-//                for (Maestro maestro : recyclerAdapterTeachers.filterMaestros){
-//
-//                    //Log.v(TAG,"Profesor: "+ maestro.getMaestro_Nombre());
-//
-//                    String name = maestro.getMaestro_Nombre().toLowerCase();
-//                    if(name.contains(newText)){
-//
-//                        newList.add(maestro);
-//                        Log.v(TAG, "Maestro: "+maestro.getMaestro_Nombre());
-//                    }
-//                }
-//
-//                mAdapter.setFilter(newList);
+                newText = newText.toLowerCase();
+                ArrayList<Maestro> newList = new ArrayList<>();
+
+
+                for (Maestro maestro : MaestroAdapter.filterMaestros){
+
+                    Log.v(TAG,"Profesor: "+ maestro.getMaestroNombre());
+
+
+                    String name = maestro.getMaestroNombre().toLowerCase();
+
+                    if(name.contains(newText)){
+
+                        newList.add(maestro);
+
+                    }
+                }
+
+                mAdapter.setFilter(newList);
 
 
 

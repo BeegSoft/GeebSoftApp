@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import com.tecnologiasintech.geebsoftapp.ItemClickListener;
 import com.tecnologiasintech.geebsoftapp.MaestroPerfil.Recycler.DataModel.maestroComentarios;
-import com.tecnologiasintech.geebsoftapp.MyViewHolder;
 import com.tecnologiasintech.geebsoftapp.R;
 
 import java.util.ArrayList;

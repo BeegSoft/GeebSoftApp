@@ -50,33 +50,33 @@ public class SignUpActivity extends AppCompatActivity {
                 String userName = inputUserName.getText().toString().trim();
                 String email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
-                String passwordConfirmation = inputPasswordConfirmation.getText().toString().trim();
+                //String passwordConfirmation = inputPasswordConfirmation.getText().toString().trim();
 
                 if (TextUtils.isEmpty(userName)){
-                    Toast.makeText(getApplicationContext(), "Enter User Name!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Ingrese su nombre de usuario!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Ingrese su correo electronico!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Ingrese su contraseña!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
 
                 if (password.length() < 6) {
-                    Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Favor de introducir mas de 6 caracteres !", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (!passwordConfirmation.equals(password)){
-                    Toast.makeText(getApplicationContext(), "Password do not match", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+//                if (!passwordConfirmation.equals(password)){
+//                    Toast.makeText(getApplicationContext(), "Password do not match", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
 
                 progressBar.setVisibility(View.VISIBLE);
                 //create user
@@ -87,13 +87,13 @@ public class SignUpActivity extends AppCompatActivity {
                         .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText(SignUpActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUpActivity.this, "Se he establecido su cuenta con éxito !" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
                                 if (!task.isSuccessful()) {
-                                    Toast.makeText(SignUpActivity.this, "Authentication failed." + task.getException(),
+                                    Toast.makeText(SignUpActivity.this, "Error en autenticacion." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
                                     startActivity(new Intent(SignUpActivity.this, MainActivity.class));
@@ -120,12 +120,12 @@ public class SignUpActivity extends AppCompatActivity {
         //Reset errors.
         inputEmail.setError(null);
         inputPassword.setError(null);
-        inputPasswordConfirmation.setError(null);
+        //inputPasswordConfirmation.setError(null);
 
         //Store Values at the time of the login attempt.
         String email = inputEmail.getText().toString().trim();
         String password = inputPassword.getText().toString().trim();
-        String passwordConfirmation = inputPasswordConfirmation.getText().toString().trim();
+        //String passwordConfirmation = inputPasswordConfirmation.getText().toString().trim();
 
         boolean fieldsValidated = true;
         View focusView= null;
@@ -156,7 +156,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         //check for a valid password confirmation
 
-        if (TextUtils.isEmpty(passwordConfirmation)) {
+        /*if (TextUtils.isEmpty(passwordConfirmation)) {
             inputPasswordConfirmation.setError(getString(R.string.error_field_required));
             focusView = inputPasswordConfirmation;
             fieldsValidated = false;
@@ -164,7 +164,7 @@ public class SignUpActivity extends AppCompatActivity {
             inputPasswordConfirmation.setError(getString(R.string.error_invalid_password));
             focusView = inputPasswordConfirmation;
             fieldsValidated = false;
-        }
+        }*/
 
         if(!fieldsValidated){
             //There was an error
@@ -183,9 +183,9 @@ public class SignUpActivity extends AppCompatActivity {
         //Todo: create Expcetion for the email to exist
         return password.length()>6;
     }
-    private boolean isPasswordConfirmationValid(String passwordConfirmation){
+    /*private boolean isPasswordConfirmationValid(String passwordConfirmation){
         return password.equals(passwordConfirmation);
-    }
+    }*/
 
 
 
